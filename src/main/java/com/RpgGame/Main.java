@@ -19,13 +19,13 @@ public class Main {
 
 
         warrior.showStatus();
-        System.out.println("\n\n");
+        System.out.println("\n----------------------------\n");
         mage.showStatus();
-        System.out.println("\n\n");
+        System.out.println("\n----------------------------\n");
         archer.showStatus();
-        System.out.println("\n\n");
+        System.out.println("\n----------------------------\n");
         character.showStatus();
-        System.out.println("\n\n");
+        System.out.println("\n----------------------------\n");
 
         do{
             System.out.println("\n--- Battle ---\n");
@@ -66,13 +66,13 @@ public class Main {
 
 
             warrior.showStatus();
-            System.out.println("\n\n");
+            System.out.println("\n----------------------------\n");
             mage.showStatus();
-            System.out.println("\n\n");
+            System.out.println("\n----------------------------\n");
             archer.showStatus();
-            System.out.println("\n\n");
+            System.out.println("\n----------------------------\n");
             character.showStatus();
-            System.out.println("\n\n");
+            System.out.println("\n----------------------------\n");
         } while (warrior.isAlive() && mage.isAlive() && archer.isAlive() && character.isAlive());
 
         System.out.println("\n-------------- BATTLE ENDED ------------------\n");
@@ -80,47 +80,47 @@ public class Main {
 
     @Contract(" -> new")
     public static @NotNull Character createChar(){
-        System.out.println("Report character name: \n");
+        System.out.println("Report character name:");
         String name = sc.next();
 
-        System.out.println("Report character level: \n");
+        System.out.println("\nReport character level:");
         int level = sc.nextInt();
 
-        System.out.println("Report character HP: \n");
+        System.out.println("\nReport character HP:");
         double hp = sc.nextDouble();
 
-        System.out.println("Report character ATK: \n");
+        System.out.println("\nReport character ATK:");
         double atk = sc.nextDouble();
 
-        System.out.println("Report character DEF: \n");
+        System.out.println("\nReport character DEF:");
         double def = sc.nextDouble();
 
-        System.out.println("Select character class: \n1 - Warrior\n2 - Mage\n3 - Archer\n");
+        System.out.println("\nSelect character class: \n1 - Warrior\n2 - Mage\n3 - Archer\n");
         int choice;
         do {choice = sc.nextInt();} while (choice<1 || choice>3);
 
         switch (choice) {
             case 1:
                 System.out.println("-----------WARRIOR SELECTED----------\n");
-                System.out.println("Report character extra ATK: \n");
+                System.out.println("Report character extra ATK:");
                 double extraATK = sc.nextDouble();
-                System.out.println("Report character extra DEF: \n");
+                System.out.println("\nReport character extra DEF:");
                 double extraDEF = sc.nextDouble();
-                System.out.println("Warrior created sucessfully!\n");
+                System.out.println("\nWarrior created sucessfully!\n----------------------------\n");
                 return new Warrior(name, level, hp, atk, def,extraATK,extraDEF);
             case 2:
                 System.out.println("-----------MAGE SELECTED----------\n");
-                System.out.println("Report character PM: \n");
+                System.out.println("Report character PM:");
                 double pm = sc.nextDouble();
-                System.out.println("Report character mana: \n");
+                System.out.println("\nReport character mana:");
                 double mana = sc.nextDouble();
-                System.out.println("Mage created sucessfully!\n");
+                System.out.println("\nMage created sucessfully!\n----------------------------\n");
                 return new Mage(name, level, hp, atk, def, pm, mana);
             case 3:
                 System.out.println("-----------ARCHER SELECTED----------\n");
-                System.out.println("Report character accuracy: \n");
+                System.out.println("Report character accuracy:");
                 double accuracy = sc.nextDouble();
-                System.out.println("Archer created sucessfully!\n");
+                System.out.println("\nArcher created sucessfully!\n----------------------------\n");
                 return new Archer(name, level, hp, atk, def, accuracy);
         }
 
