@@ -9,7 +9,7 @@ class MageTest {
         Mage mago = new Mage("Gandalf", 10, 80, 15, 5, 25, 50);
         Character inimigo = new Warrior("Thorin", 10, 100, 20, 10, 5, 2);
         mago.castSpell(inimigo);
-        assertEquals(85, inimigo.getHP()); // 25 (poder mágico) - 10 (defesa) = 15 de dano
+        assertEquals(87, inimigo.getHP()); // 25 (poder mágico) - 10 (defesa) - 2 de extra def = 13 de dano = 87 de vida
         assertEquals(40, mago.getMana()); // 50 - 10 de mana usada
     }
 
