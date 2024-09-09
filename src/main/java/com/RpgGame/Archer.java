@@ -10,7 +10,8 @@ public class Archer extends Character {
         this.accuracy = accuracy;
     }
 
-    public void shootArrow(@NotNull Character target){
+    @Override
+    public void attack(@NotNull Character target){
         double targetDEF = target.getDEF();
         double attackerATK = this.getATK() + this.accuracy;
         double damage = attackerATK - targetDEF;
@@ -18,7 +19,12 @@ public class Archer extends Character {
         if (damage < 0) damage = 0;
 
         target.receiveDMG(damage);
-        System.out.println("Arrow shooted!");
+        showAttack(target, damage);
+    }
+
+    @Override
+    public void showAttack(@NotNull Character target, double damage){
+        super.showAttack(target, damage);
     }
 
     @Override

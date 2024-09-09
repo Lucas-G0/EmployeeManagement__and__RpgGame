@@ -74,7 +74,12 @@ public class Character {
         if (damage < 0) damage = 0;
 
         target.receiveDMG(damage);
-        System.out.println("Attack sucessfull!");
+        showAttack(target, damage);
+    }
+
+    public void showAttack(@NotNull Character target, double damage) {
+        String s = ("\n" + this.getName() + " attacked " + target.getName() + " sucessfully. It did " + damage + " damage!\n");
+        System.out.println(s);
     }
 
     public void receiveDMG(double damage) {
@@ -86,11 +91,10 @@ public class Character {
     }
 
     public void showStatus(){
-        System.out.println("Name: " + this.name);
-        System.out.println("Level: " + this.level);
+        System.out.println("\t" + this.name + "     " + this.level + "° level");
+        System.out.println((this.alive?"\t  * *  ALIVE 😇 * *\n":"\t  * * DEAD 💀 * *\n"));
         System.out.println("HP: " + this.HP);
         System.out.println("ATK: " + this.ATK);
         System.out.println("DEF: " + this.DEF);
-        System.out.println("Status: " + (this.alive?"ALIVE":"DEAD"));
     }
 }

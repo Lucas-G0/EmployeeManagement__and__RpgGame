@@ -16,7 +16,8 @@ public class Mage extends Character {
         this.PM = PM;
     }
 
-    public void castSpell(@NotNull Character target) {
+    @Override
+    public void attack(@NotNull Character target) {
         double targetDEF = target.getDEF();
         double attackerATK = this.PM;
         double damage = attackerATK - targetDEF;
@@ -27,8 +28,13 @@ public class Mage extends Character {
             target.receiveDMG(damage);
             this.mana -= 10;
         } else
-            System.out.println("Ran out of mana!");
-        System.out.println("Spell sucessfull!");
+            System.out.println(this.getName() + "ran out of mana! 💧");
+        showAttack(target, damage);
+    }
+
+    @Override
+    public void showAttack(@NotNull Character target, double damage){
+        super.showAttack(target, damage);
     }
 
     @Override

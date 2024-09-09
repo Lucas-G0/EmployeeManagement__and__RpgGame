@@ -26,4 +26,10 @@ class CharacterTest {
         personagem.receiveDMG(102);
         assertFalse(personagem.isAlive()); //102 de dano - 100 de vida - 2 de extra def
     }
+
+    @Test
+    void testShowStatus(){
+        Character personagem = new Warrior("Thorin", 10, 100, 20, 10, 5, 2);
+        personagem.showStatus();
+    }
 }

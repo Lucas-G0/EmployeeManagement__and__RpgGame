@@ -21,7 +21,7 @@ public class Warrior extends Character {
         if (damage < 0) damage = 0;
 
         target.receiveDMG(damage);
-        System.out.println("Attack sucessfull!");
+        showAttack(target, damage);
     }
 
     @Override
@@ -34,9 +34,14 @@ public class Warrior extends Character {
     }
 
     @Override
+    public void showAttack(@NotNull Character target, double damage){
+        super.showAttack(target, damage);
+    }
+
+    @Override
     public void showStatus(){
         super.showStatus();
-        System.out.println("ExtraATK: " + this.extraATK);
-        System.out.println("ExtraDEF: " + this.extraDEF);
+        System.out.println("Extra ATK: " + this.extraATK);
+        System.out.println("Extra DEF: " + this.extraDEF);
     }
 }
